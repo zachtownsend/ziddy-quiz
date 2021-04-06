@@ -1,25 +1,26 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { QuizProvider } from './contexts/QuizContext';
+import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
+import { Main } from './Main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <AppBar>
+        <Toolbar>
+          <Typography variant="h6" noWrap>
+            Ziddy Quiz
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <main>
+          <QuizProvider>
+            <Main />
+          </QuizProvider>
+      </main>
+    </React.Fragment>
   );
 }
 
